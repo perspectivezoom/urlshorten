@@ -11,4 +11,9 @@ class UrlsController < ApplicationController
   def index
   	@urls = Url.all
   end
+
+  def redirect
+  	url = Url.find_by_short_id(params[:short_id])
+  	redirect_to url.long_url
+  end
 end
