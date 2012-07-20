@@ -5,6 +5,7 @@
 <tr>
 	<td><%= url.long_url %></td>
 	<td><%= link_to(url.short_id,"http://#{request.host}:#{request.port}/#{url.short_id}") %> </td>
+	<td><%= url.clicks.length %></td>
 </tr>
 <% end %>
 </table>

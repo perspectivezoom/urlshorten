@@ -1,5 +1,6 @@
 class Url < ActiveRecord::Base
   attr_accessible :long_url, :short_id
+  has_many :clicks
   before_save :prep_fields_for_save
 
   def prep_fields_for_save

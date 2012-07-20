@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120720214447) do
 
   create_table "clicks", :force => true do |t|
-    t.integer  "url_id_id"
+    t.integer  "url_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

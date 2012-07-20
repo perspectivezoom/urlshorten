@@ -4,8 +4,7 @@ class UrlsController < ApplicationController
   end
 
   def create
-  	@url = Url.new(params[:url])
-  	@url.save
+  	@url = Url.create(params[:url])
   end
 
   def index
@@ -14,6 +13,7 @@ class UrlsController < ApplicationController
 
   def redirect
   	url = Url.find_by_short_id(params[:short_id])
+  	url.clicks.create
   	redirect_to url.long_url
   end
 end
