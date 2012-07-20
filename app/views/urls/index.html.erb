@@ -1,2 +1,10 @@
-<h1>Urls#index</h1>
-<p>Find me in app/views/urls/index.html.erb</p>
+<h1>List of URLs</h1>
+
+<table>
+<% @urls.each do |url| %>
+<tr>
+	<td><%= url.long_url %></td>
+	<td><%= link_to(url.short_id,"http://#{request.host}:#{request.port}/#{url.short_id}") %> </td>
+</tr>
+<% end %>
+</table>
