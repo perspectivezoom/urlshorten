@@ -1,6 +1,7 @@
 Urlshorten::Application.routes.draw do
   root :to => 'urls#new'
   resources :urls
+  match '/:short_id' => 'urls#redirect', :as => 'redirect' 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
