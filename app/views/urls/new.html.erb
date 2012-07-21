@@ -1,6 +1,8 @@
 <h3>Enter a URL to shorten</h3>
 
 <%= form_for @url do |f| %>
-  <%= f.text_field :long_url %><br />
+  <%= "short URL (optional): http://#{request.host}:#{request.port}/" %> 
+  <%= f.text_field :short_id %><br />
+  URL to shorten: <%= f.text_field :long_url %><br />
   <%= f.submit %>
 <% end %>

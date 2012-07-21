@@ -13,7 +13,9 @@ class Url < ActiveRecord::Base
   end
 
   def generate_short_id
-  	self.short_id ||= Array.new(8).map { ('a'..'z').to_a[rand(26)] }.join
+  	unless (!self.short_id.nil?) && self.short_id.match(/[a-z]\w*/)
+  	  self.short_id = (0...8).map { ('a'..'z').to_a[rand(26)] }.join
+  	end
   end
 
 end
